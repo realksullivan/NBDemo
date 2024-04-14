@@ -1,4 +1,4 @@
- ***BaseTest.java***:  is a  Java class that serves as a base for Selenium WebDriver test classes in a project. It leverages the TestNG framework for testing and focuses on setting up the WebDriver, navigating to a specific URL, and tearing down the WebDriver instance when the tests are complete. Here is an explanation of each part of the code:
+ ***src/test/java/base/BaseTest.java***:  is a  Java class that serves as a base for Selenium WebDriver test classes in a project. It leverages the TestNG framework for testing and focuses on setting up the WebDriver, navigating to a specific URL, and tearing down the WebDriver instance when the tests are complete. Here is an explanation of each part of the code:
 
 1. **Package Declaration**:
     - `package base;` indicates the package where this class is located. It is a part of the base package of your project.
