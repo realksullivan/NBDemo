@@ -38,32 +38,39 @@ import base.BaseTest;
 public class MyTest extends BaseTest {
     // Test methods here
 }
-###
+```
+# LoginTest Class
 
-***src/main/java/pages/HomePage.java*** is a Java class representing the home page of a web application. This class uses Selenium WebDriver to interact with the web application and navigate to the form authentication (login) page. Here's an explanation of each part of the code:
+The `LoginTest` class contains test methods that verify the login functionality of a web application. It extends the `BaseTest` class to inherit setup and teardown methods, providing a consistent testing environment.
 
-1. **Package Declaration**:
-    - `package pages;` indicates that the class is part of the `pages` package in the project. This package likely contains other page classes representing different pages of the application.
+## Test Methods
 
-2. **Class Declaration**:
-    - `public class HomePage` declares a public class named `HomePage`. This class represents the home page of the application.
+- **`@Test public void testPasswordRequired()`**:
+    - This method tests the scenario where the password is required for login.
+    - It navigates to the form authentication page using `homePage.clickFormAuthentication()`, and returns a `LoginPage` instance.
+    - The method sets the username to "DemoUser" using `loginPage.setUsername("DemoUser")`.
+    - The login button is clicked using `loginPage.clickLoginButton()`.
+    - The method uses an assertion (`assertTrue`) to verify that the password required alert is displayed (`loginPage.isAlertPasswordRequiredDisplayed()`).
 
-3. **Private WebDriver Instance**:
-    - `private WebDriver driver;` declares a private instance of `WebDriver` to manage the browser and interact with the web elements on the home page.
+- **`@Test public void testUserIdRequired()`**:
+    - This method tests the scenario where the user ID (username) is required for login.
+    - Similar to the previous test, it navigates to the form authentication page using `homePage.clickFormAuthentication()` and obtains a `LoginPage` instance.
+    - The method sets the password to "DemoPassword" using `loginPage.setPassword("DemoPassword")`.
+    - The login button is clicked using `loginPage.clickLoginButton()`.
+    - The method uses an assertion (`assertTrue`) to verify that the user ID required alert is displayed (`loginPage.isUserIdRequiredDisplayed()`).
 
-4. **Private By Locator**:
-    - `private By formAuthenticatedLink = By.cssSelector(".login__text");` declares a `By` locator using a CSS selector to identify the form authentication link on the home page.
+## Usage
 
-5. **Constructor**:
-    - `public HomePage(WebDriver driver)` is a constructor that takes a `WebDriver` instance as a parameter. The constructor initializes the `WebDriver` instance for this page object.
+- **Extending BaseTest**:
+    - By extending `BaseTest`, the `LoginTest` class gains access to common setup and teardown methods that manage the WebDriver and home page.
+    
+- **Running the Tests**:
+    - Use the TestNG framework to execute the test methods in the `LoginTest` class.
+    - The test methods use assertions (`assertTrue`) to verify expected outcomes and validate the behavior of the login page.
 
-6. **Methods**:
-    - **`clickFormAuthentication()`:**
-        - This method clicks the form authentication (login) link on the home page.
-        - It uses the WebDriver instance (`driver`) to find the form authentication link using the locator (`formAuthenticatedLink`) and clicks it (`driver.findElement(formAuthenticatedLink).click();`).
-        - After clicking the link, the method returns a new instance of `LoginPage` initialized with the current `WebDriver` instance (`return new LoginPage(driver);`), allowing the caller to interact with the login page.
+## Conclusion
 
-In summary, the `HomePage` class serves as a page object model for the home page of the application. It provides methods for interacting with the elements on the home page, such as navigating to the login page by clicking the form authentication link. This class encapsulates the behavior of the home page, making it easier to write automated tests and manage the page's interactions.
+The `LoginTest` class contains focused test methods that verify critical aspects of the login functionality in a web application. By leveraging the `BaseTest` class for setup and teardown, these tests provide a reliable and consistent environment for ensuring the quality of the login process.
 
 # HomePage Class
 
@@ -94,5 +101,4 @@ To use the `HomePage` class, first instantiate it with a WebDriver instance:
 ```java
 WebDriver driver = new ChromeDriver(); // or other WebDriver instance
 HomePage homePage = new HomePage(driver);
-
-
+```
