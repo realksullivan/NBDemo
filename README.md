@@ -87,3 +87,35 @@ Overall, this class contains test cases for validating the login functionality o
         - After clicking the link, the method returns a new instance of `LoginPage` initialized with the current `WebDriver` instance (`return new LoginPage(driver);`), allowing the caller to interact with the login page.
 
 In summary, the `HomePage` class serves as a page object model for the home page of the application. It provides methods for interacting with the elements on the home page, such as navigating to the login page by clicking the form authentication link. This class encapsulates the behavior of the home page, making it easier to write automated tests and manage the page's interactions.
+
+# HomePage Class
+
+The `HomePage` class represents the home page of a web application and provides methods for interacting with elements on the page. This class is part of the page object model pattern used in the project for maintaining clear separation between the test code and the application's UI elements.
+
+## Constructor
+
+- **`HomePage(WebDriver driver)`**:
+    - Initializes the `HomePage` with a given WebDriver instance.
+    - The driver is used to interact with the web application.
+
+## Properties
+
+- **`By formAuthenticatedLink`**:
+    - A private `By` locator for the form authentication (login) link on the home page.
+    - The link is identified using a CSS selector (`.login__text`).
+
+## Methods
+
+- **`LoginPage clickFormAuthentication()`**:
+    - Navigates to the form authentication (login) page by clicking the form authentication link.
+    - Returns a new instance of `LoginPage` to represent the form authentication page.
+
+## Usage
+
+To use the `HomePage` class, first instantiate it with a WebDriver instance:
+
+```java
+WebDriver driver = new ChromeDriver(); // or other WebDriver instance
+HomePage homePage = new HomePage(driver);
+
+
