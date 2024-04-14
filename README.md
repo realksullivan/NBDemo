@@ -56,3 +56,28 @@ This class forms the foundation for test classes in your project by setting up t
         - The method asserts that the user ID required alert is displayed using `assertTrue(loginPage.isUserIdRequiredDisplayed())`.
 
 Overall, this class contains test cases for validating the login functionality of a web application using assertions to verify expected outcomes (e.g., alert messages for required fields). By extending `BaseTest`, it leverages common setup and teardown functionality for tests, providing a consistent testing environment.
+
+***src/main/java/pages/HomePage.java*** is a Java class representing the home page of a web application. This class uses Selenium WebDriver to interact with the web application and navigate to the form authentication (login) page. Here's an explanation of each part of the code:
+
+1. **Package Declaration**:
+    - `package pages;` indicates that the class is part of the `pages` package in the project. This package likely contains other page classes representing different pages of the application.
+
+2. **Class Declaration**:
+    - `public class HomePage` declares a public class named `HomePage`. This class represents the home page of the application.
+
+3. **Private WebDriver Instance**:
+    - `private WebDriver driver;` declares a private instance of `WebDriver` to manage the browser and interact with the web elements on the home page.
+
+4. **Private By Locator**:
+    - `private By formAuthenticatedLink = By.cssSelector(".login__text");` declares a `By` locator using a CSS selector to identify the form authentication link on the home page.
+
+5. **Constructor**:
+    - `public HomePage(WebDriver driver)` is a constructor that takes a `WebDriver` instance as a parameter. The constructor initializes the `WebDriver` instance for this page object.
+
+6. **Methods**:
+    - **`clickFormAuthentication()`:**
+        - This method clicks the form authentication (login) link on the home page.
+        - It uses the WebDriver instance (`driver`) to find the form authentication link using the locator (`formAuthenticatedLink`) and clicks it (`driver.findElement(formAuthenticatedLink).click();`).
+        - After clicking the link, the method returns a new instance of `LoginPage` initialized with the current `WebDriver` instance (`return new LoginPage(driver);`), allowing the caller to interact with the login page.
+
+In summary, the `HomePage` class serves as a page object model for the home page of the application. It provides methods for interacting with the elements on the home page, such as navigating to the login page by clicking the form authentication link. This class encapsulates the behavior of the home page, making it easier to write automated tests and manage the page's interactions.
