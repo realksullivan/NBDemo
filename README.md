@@ -102,3 +102,76 @@ To use the `HomePage` class, first instantiate it with a WebDriver instance:
 WebDriver driver = new ChromeDriver(); // or other WebDriver instance
 HomePage homePage = new HomePage(driver);
 ```
+# LoginPage Class
+
+The `LoginPage` class represents the login page of a web application and provides methods for interacting with the elements on the page. It follows the page object model pattern, which abstracts interactions with web pages and makes test code cleaner and more maintainable.
+
+## Constructor
+
+- **`LoginPage(WebDriver driver)`**:
+    - Initializes the `LoginPage` with a given WebDriver instance.
+    - The driver is used to interact with the web elements on the login page.
+
+## Properties
+
+- **`By usernameField`**:
+    - A `By` locator for the username input field, identified by its HTML element ID (`dom-username-input`).
+- **`By passwordField`**:
+    - A `By` locator for the password input field, identified by its HTML element ID (`dom-pswd-input`).
+- **`By loginButton`**:
+    - A `By` locator for the login button, identified by its HTML element ID (`dom-login-button`).
+- **`By passwordRequired`**:
+    - A `By` locator for the alert element displayed when the password is required (`Enter your password.`).
+- **`By userIdRequired`**:
+    - A `By` locator for the alert element displayed when the username is required (`Enter your username.`).
+
+## Methods
+
+- **`void setUsername(String username)`**:
+    - Sets the username in the username input field.
+- **`void setPassword(String password)`**:
+    - Sets the password in the password input field.
+- **`SecureAreaPage clickLoginButton()`**:
+    - Clicks the login button and returns a new instance of `SecureAreaPage`.
+- **`boolean isAlertPasswordRequiredDisplayed()`**:
+    - Returns `true` if the password required alert is displayed, otherwise `false`.
+- **`boolean isUserIdRequiredDisplayed()`**:
+    - Returns `true` if the user ID required alert is displayed, otherwise `false`.
+
+## Usage
+
+1. **Instantiate the LoginPage**:
+    - Create a new instance of the `LoginPage` class using a `WebDriver` instance:
+
+    ```java
+    WebDriver driver = new ChromeDriver(); // or another WebDriver instance
+    LoginPage loginPage = new LoginPage(driver);
+    ```
+
+2. **Set Username and Password**:
+    - Use the `setUsername` and `setPassword` methods to enter credentials:
+
+    ```java
+    loginPage.setUsername("DemoUser");
+    loginPage.setPassword("DemoPassword");
+    ```
+
+3. **Click Login Button**:
+    - Click the login button using the `clickLoginButton` method:
+
+    ```java
+    SecureAreaPage secureAreaPage = loginPage.clickLoginButton();
+    ```
+
+4. **Check Alerts**:
+    - Use the `isAlertPasswordRequiredDisplayed` and `isUserIdRequiredDisplayed` methods to verify the presence of alerts:
+
+    ```java
+    boolean isPasswordAlertDisplayed = loginPage.isAlertPasswordRequiredDisplayed();
+    boolean isUserIdAlertDisplayed = loginPage.isUserIdRequiredDisplayed();
+    ```
+
+## Conclusion
+
+The `LoginPage` class abstracts the interactions with the login page of the web application, providing methods to enter credentials, click the login button, and check alerts. By using this class, test code becomes more readable and maintainable.
+
