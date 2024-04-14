@@ -1,3 +1,8 @@
+## Table of Contents
+- [BaseTest.Java](#basetest)
+- [LoginTest.Java](#logintest)
+
+ ## BaseTest
  ***src/test/java/base/BaseTest.java***:  is a  Java class that serves as a base for Selenium WebDriver test classes in a project. It leverages the TestNG framework for testing and focuses on setting up the WebDriver, navigating to a specific URL, and tearing down the WebDriver instance when the tests are complete. Here is an explanation of each part of the code:
 
 1. **Package Declaration**:
@@ -26,6 +31,7 @@
 
 This class forms the foundation for test classes in your project by setting up the browser, navigating to a specific URL before each test, and closing the browser when testing is complete.
 
+ ## LoginTest
 ***src/test/java/login/LoginTest.java*** is a Java class that contains test methods for testing login functionality in a web application. It extends from a base test class (`BaseTest`) and uses the TestNG testing framework. The code tests different scenarios related to logging into the application and asserts the expected behavior. Here's an explanation of each part of the code:
 
 1. **Package Declaration**:
