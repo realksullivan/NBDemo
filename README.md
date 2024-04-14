@@ -1,6 +1,9 @@
 ## Table of Contents
-- [BaseTest.Java](#basetest)
-- [LoginTest.Java](#logintest)
+- [BaseTest Class](#basetest-class)
+- [LoginTest Class](#logintest-class)
+- [HomePage Class](#homepage-class)
+- [LoginPage Class](#loginpage-class)
+
 
  ## BaseTest
 # BaseTest Class
