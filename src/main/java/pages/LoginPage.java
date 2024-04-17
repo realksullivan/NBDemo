@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     private WebDriver driver;
-    private By usernameField = By.id("dom-username-input");
-    private By passwordField = By.id("dom-pswd-input");
-    private By loginButton = By.id("dom-login-button");
-    private By passwordRequired = By.xpath("//s-assigned-wrapper[.='Enter your password.']");
+    private By usernameField = By.id("username");
+    private By passwordField = By.id("password");
+    private By loginButton = By.xpath("//button[@class='radius'][contains(.,'Login')]");
+    private By passwordRequired = By.id("flash");
     private By userIdRequired = By.xpath("//s-assigned-wrapper[.='Enter your username.']");
 
     public LoginPage(WebDriver driver){

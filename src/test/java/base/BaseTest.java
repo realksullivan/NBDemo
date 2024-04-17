@@ -20,7 +20,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void goHome(){
-        driver.get("https://nb.fidelity.com/public/nbpreloginnav/spa/fidelitywork/core/home");
+        driver.get("https://the-internet.herokuapp.com/");
         homePage = new HomePage(driver);
     }
 

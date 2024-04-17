@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
     private WebDriver driver;
-    private By  formAuthenticatedLink = By.cssSelector(".login__text");
+    private By  formAuthenticatedLink = By.xpath("//a[contains(.,'Form Authentication')]");
     public  HomePage(WebDriver driver){
         this.driver=driver;
     }
