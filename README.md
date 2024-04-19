@@ -16,8 +16,6 @@ To get started, explore the Table of Contents below to learn more about each com
 
 ---
 
-Adjust the language and details as needed to match your specific project's goals and scope.
-
 ## Table of Contents
 - [BaseTest Class](#basetest-class)
 - [LoginTest Class](#logintest-class)
