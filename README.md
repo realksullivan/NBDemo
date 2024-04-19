@@ -40,7 +40,7 @@ The `BaseTest` class serves as a foundation for Selenium WebDriver tests in the 
     - This method sets up the WebDriver, preparing it for use in the tests.
 
 - **`@BeforeMethod public void goHome()`**:
-    - Navigates the WebDriver to the specified URL (`https://nb.fidelity.com/public/nbpreloginnav/spa/fidelitywork/core/home`) before each test method.
+    - Navigates the WebDriver to the specified URL ("https://the-internet.herokuapp.com/") before each test method.
     - Initializes a `HomePage` instance with the current WebDriver, allowing the test methods to interact with the home page.
 
 - **`@AfterTest public void tearDown()`**:
